@@ -3,8 +3,9 @@ import styles from "./Card.module.css";
 const Card = ({ cardData, title }) => {
   if (!cardData) return null;
   return (
+// Added key(index) to uniquely identify the each prop
     <div className={styles.container}>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title}>{title}</div>  
       {Object.entries(cardData).map(([k, v], index) => (
         <div className={styles.cell} key={index}>
           <div className={styles.value}>{k}</div>
