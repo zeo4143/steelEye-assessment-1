@@ -26,4 +26,6 @@
 
 - run storybook `npm run storybook`
 
-1. Please add storybook to one of the components
+1. Please add storybook to one of the components - in progress
+
+
