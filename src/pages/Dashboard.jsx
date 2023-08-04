@@ -20,7 +20,8 @@ const Dashboard = () => {
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
 
-  // created handleItem void Function
+  // created handleItem void Function with index as @param 
+  //whenever we click on the list item the on click event call this function and do the below operations and populate the card views by specific list items details
 
   const handleItemSelected = (index) => {
     const specificItem = mockData.results[index].executionDetails;
@@ -44,6 +45,7 @@ const Dashboard = () => {
       <div className={styles.header}>
         <HeaderTitle
           primaryTitle="Orders"
+          // changed static orders to dynamic no.of by using String Interpolation
           secondaryTitle={`${mockData.results.length} orders`}
         />
         <div className={styles.actionBox}>
@@ -70,9 +72,13 @@ const Dashboard = () => {
           />
         </div>
         <List
+          //Added a search feature in the below using in built .filter(), .toLoweCase() - for case sensitivity, .includes() functions and render the list items according to it
           rows={mockData.results.filter(value => value["&id"].toLowerCase().includes(searchText.toLowerCase()))}
+          //Added to show the timeStamps when the  order submited
           time={timestamps.results}
+          // Added to show currency selected by the user from the dropdown
           curr={currency}
+          // Added the event whenever action performed on the list items this function calls
           handleItem={handleItemSelected}
         />
       </div>
