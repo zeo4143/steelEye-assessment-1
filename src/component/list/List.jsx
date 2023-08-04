@@ -20,12 +20,12 @@ const List = ({ rows, time, curr, handleItem}) => {
       </thead>
       <tbody>
         {rows.map((row, index) => (
+           {/* passing props "item" & "index" as a props to its children*/}
           <ListRow key={index} item = {handleItem} index = {index}>
             <ListRowCell>{row["&id"]}</ListRowCell>
             <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
-            <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
-            
-            {/* new rows add to the  order submitted*/}
+            <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>  
+            {/*Removed previous row & new rows add to the  order submitted*/}
             <ListRowCell>{time[index].timestamps.orderSubmitted}</ListRowCell>
             {/* changed according to user currency selected */}
             <ListRowCell>{row.bestExecutionData.orderVolume[curr]}</ListRowCell>
