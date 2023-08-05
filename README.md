@@ -1,3 +1,6 @@
+##Deploy Link
+# https://stey-1.netlify.app/
+
 # Instructions
 
 - clone this repo and open with your favorite code editor (Done)
