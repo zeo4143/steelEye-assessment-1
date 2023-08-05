@@ -21,7 +21,7 @@ const List = ({ rows, time, curr, handleItem}) => {
       <tbody>
         {rows.map((row, index) => (
            {/* passing props "item" & "index" as a props to its children*/}
-          <ListRow key = {index} item = {handleItem} index = {index}>
+          <ListRow item = {handleItem} index = {index}>
             <ListRowCell>{row["&id"]}</ListRowCell>
             <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
             <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>  
